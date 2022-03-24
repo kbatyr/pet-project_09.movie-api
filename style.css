@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--main-color: #22254b;
+	--second-color: #373b69;
+	--seek_bar-color: #9c3737;
+	--song-cover: url(./assets/img/cover1.png);
+}
+
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: var(--main-color);
+}
+
+header {
+	display: flex;
+	justify-content: flex-end;
+	padding: 1em;
+	background-color: var(--second-color);
+}
+
+.search-bar {
+	padding: 0.5em 1em;
+	border: 2px solid var(--main-color);
+	border-radius: 50px;
+	font-size: 1em;
+	background-color: transparent;
+	color: #fff;
+	font-family: inherit;
+}
+
+.search-bar:focus {
+	outline: 0;
+	background-color: var(--main-color);
+}
+
+.search-bar::placeholder {
+	color: #7378c5;
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.movie {
+	width: 300px;
+	position: relative;
+	margin: 1rem;
+	border-radius: 3px;
+	box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+	background-color: var(--second-color);
+	overflow: hidden;
+}
+
+.movie-img {
+	width: 100%;
+}
+
+.movie-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 1rem 1rem;
+	color: #fff;
+	letter-spacing: 0.5px;
+}
+
+.movie-title {
+	margin-top: 0;
+}
+
+.movie-rating {
+	padding: 0.25rem 0.5rem;
+	background-color: var(--main-color);
+	border-radius: 3px;
+	font-weight: bold;
+}
+
+.movie-rating.green {
+	color: lightgreen;
+}
+
+.movie-rating.orange {
+	color: orange;
+}
+
+.movie-rating.red {
+	color: red;
+}
+
+.movie-description {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #fff;
+	padding: 1rem;
+	max-height: 100%;
+	transform: translateY(101%);
+	transition: transform 0.3s ease-in;
+}
+
+.movie:hover .movie-description {
+	transform: translateY(0);
+}
